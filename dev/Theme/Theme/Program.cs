@@ -12,7 +12,7 @@ t.SetList(list);
 t.AfficherList();
 ThemeEx t2 = new ThemeEx("test2", "eriugren", list);
 t2.AfficherList();
-
-
-
+Persistance<ThemeEx> maPersistance= new Persistance<ThemeEx>();
+maPersistance.Save(t);
+List<ThemeEx> themeLoaded= maPersistance.Load();
 

@@ -19,7 +19,7 @@ namespace Theme
             _question = new List<Question>();
         }
 
-        public ThemeEx(string name, string imagePath, List<Question> l) : this(name,imagePath)
+        public ThemeEx(string name, string imagePath, List<Question> l) : this(name, imagePath)
         {
             _question = l;
         }
@@ -28,7 +28,7 @@ namespace Theme
         {
             foreach (Question i in _question)
             {
-                Console.WriteLine(" +++ "+i);
+                Console.WriteLine(" +++ " + i);
             }
         }
 
@@ -46,8 +46,6 @@ namespace Theme
         {
             _question = l;
         }
-
-
 
     }
 }
