@@ -22,7 +22,7 @@ namespace Theme
             _question = new List<Question>();
         }
 
-        public ThemeEx(string name, string imagePath, List<Question> l) : this(name,imagePath)
+        public ThemeEx(string name, string imagePath, List<Question> l) : this(name, imagePath)
         {
             _question = l;
         }
@@ -31,7 +31,7 @@ namespace Theme
         {
             foreach (Question i in _question)
             {
-                Console.WriteLine(" +++ "+i);
+                Console.WriteLine(" +++ " + i);
             }
         }
 
@@ -50,6 +50,7 @@ namespace Theme
             _question = l;
         }
 
+<<<<<<< HEAD
         public string SerializingTheme()
         {
             string output = JsonSerializer.Serialize(this, new JsonSerializerOptions {WriteIndented = true });
@@ -73,5 +74,7 @@ namespace Theme
 
 
 
+=======
+>>>>>>> 83d8cc82a766e3fb06f2f60a1043c9784fd3c6d5
     }
 }
