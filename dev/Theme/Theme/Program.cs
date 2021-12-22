@@ -6,8 +6,7 @@ Console.WriteLine("Hello, World!");
 ThemeEx t = new ThemeEx("test1","erggeezge");
 List<Question> list = new List<Question>();
 t.AfficherList();
-list.Add(1);
-list.Add(2);
+
 Console.WriteLine(list);
 t.SetList(list);
 t.AfficherList();

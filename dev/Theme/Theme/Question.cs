@@ -11,7 +11,7 @@ namespace Theme
         private int _id;
         private string _texte;
         private string _pathImage;
-        private Reponse _bonneReponse;
+        private List<Reponse> _reponseList= new List<Reponse>();
 
 
 
