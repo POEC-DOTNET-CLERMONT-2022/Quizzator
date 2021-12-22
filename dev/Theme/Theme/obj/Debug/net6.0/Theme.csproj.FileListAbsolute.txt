@@ -13,3 +13,5 @@ C:\Users\PC 5\projet\Quizzator\dev\Theme\Theme\obj\Debug\net6.0\Theme.dll
 C:\Users\PC 5\projet\Quizzator\dev\Theme\Theme\obj\Debug\net6.0\ref\Theme.dll
 C:\Users\PC 5\projet\Quizzator\dev\Theme\Theme\obj\Debug\net6.0\Theme.pdb
 C:\Users\PC 5\projet\Quizzator\dev\Theme\Theme\obj\Debug\net6.0\Theme.genruntimeconfig.cache
+C:\Users\PC 5\projet\Quizzator\dev\Theme\Theme\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\PC 5\projet\Quizzator\dev\Theme\Theme\obj\Debug\net6.0\Theme.csproj.CopyComplete

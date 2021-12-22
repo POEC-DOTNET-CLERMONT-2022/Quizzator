@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Theme
 {
     internal class ThemeEx
     {
-        private string _name;
-        private List<Question> _question;
-        private string _imagePath;
+        public string _name { get; set; }
+        public List<Question> _question { get; set; }
+        public string _imagePath { get; set; }
 
         public ThemeEx(string name, string imagePath)
         {
@@ -45,6 +48,27 @@ namespace Theme
         public void SetList(List<Question> l)
         {
             _question = l;
+        }
+
+        public string SerializingTheme()
+        {
+            string output = JsonSerializer.Serialize(this, new JsonSerializerOptions {WriteIndented = true });
+            return output;
+        }
+
+        public string GetName()
+        {
+            return _name;
+        }
+
+        public string GetImagePath()
+        {
+            return _imagePath;
+        }
+
+        public List<Question> GetListQuestion()
+        {
+            return _question;
         }
 
 
