@@ -1,10 +1,4 @@
 ﻿using ServiceReference1;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ThemeSelection
@@ -14,8 +8,11 @@ namespace ThemeSelection
     /// </summary>
     public partial class App : Application
     {
-        ThemeServiceClient ThemeService = new ThemeServiceClient();
-        
-        // ThemeService.GetData(12);
+        public ThemeServiceClient ThemeServiceClient { get; }
+        public App()
+        {
+            ThemeServiceClient = new ThemeServiceClient();
+            
+        }
     }
 }

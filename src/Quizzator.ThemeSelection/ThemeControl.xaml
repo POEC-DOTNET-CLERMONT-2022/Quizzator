@@ -10,6 +10,11 @@
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="background.jpg" AlignmentY="Top" AlignmentX="Center"/>
         </Grid.Background>
-        <Button Width="50" Height="50" Click="Button_Click">Hi</Button>
+        <Button Width="50" Height="50" Click="Button_Click" x:Name="NomTheme">
+            <DataTemplate>
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}"/>
+                </StackPanel>
+            </DataTemplate></Button>
     </Grid>
 </UserControl>
