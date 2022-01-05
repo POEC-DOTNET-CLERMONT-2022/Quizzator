@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ThemeSelection
+namespace Quizzator.ThemeSelection
 {
     /// <summary>
-    /// Interaction logic for Theme.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class Theme : UserControl
+    public partial class ThemeControl: UserControl
     {
-        public Theme()
+        public ThemeControl()
         {
             InitializeComponent();
         }

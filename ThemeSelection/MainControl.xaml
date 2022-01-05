@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ThemeSelection"
+             xmlns:local="clr-namespace:Quizzator.ThemeSelection"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -23,8 +23,8 @@
             <MenuItem>Deconnection</MenuItem>
         </Menu>
         <ContentControl Grid.Row="1" Grid.ColumnSpan="2">
-            <local:Theme
-            
+            <local:ThemeControl></local:ThemeControl>
+
         </ContentControl>
     </Grid>
 </UserControl>
