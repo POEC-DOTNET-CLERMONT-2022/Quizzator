@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace Theme
+namespace Quizzator.Quizzator.Models
 {
-    internal class ThemeEx
+    public class ThemeEx
     {
         public string _name { get; set; }
         public List<Question> _question { get; set; }
@@ -49,7 +49,7 @@ namespace Theme
 
         public string SerializingTheme()
         {
-            string output = JsonSerializer.Serialize(this, new JsonSerializerOptions {WriteIndented = true });
+            string output = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
             return output;
         }
 

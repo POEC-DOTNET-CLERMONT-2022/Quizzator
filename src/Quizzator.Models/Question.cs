@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Theme
+namespace Quizzator.Quizzator.Models
 {
-    internal class Question
+    public class Question
     {
         private int _id;
         private string _texte;
         private string _pathImage;
-        private List<Reponse> _reponseList= new List<Reponse>();
+        private List<Reponse> _reponseList = new List<Reponse>();
     }
 }

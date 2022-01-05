@@ -5,4 +5,12 @@
     <AssemblyName>Quizzator.$(MSBuildProjectName)</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.17.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Quizzator.Models\Quizzator.Models.csproj" />
+  </ItemGroup>
+
 </Project>

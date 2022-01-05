@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Quizzator.Dtos
+namespace Quizzator.Quizzator.Dtos
 {
     [DataContract]
     public class ThemeDtos

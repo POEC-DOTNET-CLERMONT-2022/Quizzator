@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Theme
+namespace Quizzator.Quizzator.Models
 {
     internal class Reponse
     {
@@ -20,12 +20,12 @@ namespace Theme
             _explication = explication;
             _isTroll = istroll;
         }
-        
+
         public bool IsTrool()
-            { return _isTroll; }
+        { return _isTroll; }
         public void SetExplication(string explication)
         {
-            if (explication != null || explication == String.Empty)
+            if (explication != null || explication == string.Empty)
             {
                 _explication = explication;
             }
@@ -34,7 +34,7 @@ namespace Theme
                 throw new Exception("Explication est vide!");
             }
         }
-        
+
         public string GetExplication()
         {
             return _explication;
@@ -42,7 +42,7 @@ namespace Theme
 
         public void SetTexte(string texte)
         {
-            if(texte != null || texte == String.Empty)
+            if (texte != null || texte == string.Empty)
             {
                 _texte = texte;
             }
@@ -64,14 +64,14 @@ namespace Theme
         {
             if (Uri.IsWellFormedUriString(link, UriKind.Absolute))
             {
-                if(_lien.Count < 2)
+                if (_lien.Count < 2)
                 {
                     _lien.Add(link);
                 }
                 else
                 {
                     throw new Exception("Deja 3 liens presents");
-                }   
+                }
             }
             else
             {

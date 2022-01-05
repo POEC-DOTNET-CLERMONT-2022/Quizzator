@@ -1,12 +1,18 @@
-﻿namespace Quizzator.Persistance
+﻿using AutoFixture;
+using System.Collections.Generic;
+using Quizzator.Quizzator.Models;
+
+namespace Quizzator.Persistance
 {
     public class ThemeManager : IThemeManager
     {
+        
+        private readonly Fixture _fixture = new Fixture();
 
-       /* public IEnumerable<Theme> GetAllTheme()
+        public IEnumerable<ThemeEx> GetAllTheme()
         {
-            return;
-        }*/
+            return _fixture.CreateMany<ThemeEx>(5);
+        }
 
     }
 }
