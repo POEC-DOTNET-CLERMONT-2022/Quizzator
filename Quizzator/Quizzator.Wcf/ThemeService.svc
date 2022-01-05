@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Quizzator.Wcf.Service1" CodeBehind="ThemeService.svc.cs" %>
