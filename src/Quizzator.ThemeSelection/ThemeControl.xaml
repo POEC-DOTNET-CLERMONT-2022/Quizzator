@@ -10,6 +10,6 @@
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="background.jpg" AlignmentY="Top" AlignmentX="Center"/>
         </Grid.Background>
-        <Button Width="50" Height="50">Hi</Button>
+        <Button Width="50" Height="50" Click="Button_Click">Hi</Button>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,8 @@ namespace ThemeSelection
     /// </summary>
     public partial class App : Application
     {
+        ThemeServiceClient ThemeService = new ThemeServiceClient();
+        
+        // ThemeService.GetData(12);
     }
 }
