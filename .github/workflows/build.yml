@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - dev
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -43,5 +44,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"POEC-DOTNET-CLERMONT-2022_Quizzator" /o:"poec-dotnet-clermont-2022" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          donet build src/Quizzator.sln
+          dotnet build src/Quizzator.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
