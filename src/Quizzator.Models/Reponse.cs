@@ -1,28 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Quizzator.Quizzator.Models
 {
-    internal class Reponse
+    public sealed class Reponse
     {
-        private string _texte;
-        private string _explication;
-        private List<string> _lien = new List<string>();
-        private bool _isTroll;
+        #region Init
+        private string _texte { get; set; }
+        private string _explication { get; set; }
+        private List<string> _lien { get; } =  new List<string>();
+        private bool _isTroll { get; set; }
 
         public Reponse(string texte, string explication, bool istroll)
         {
-            _texte = texte;
-            _explication = explication;
+            SetTexte(texte);
+            SetExplication(explication);
             _isTroll = istroll;
         }
+        #endregion
 
-        public bool IsTrool()
-        { return _isTroll; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="explication"></param>
+        /// <exception cref="Exception"></exception>
         public void SetExplication(string explication)
         {
             if (explication != null || explication == string.Empty)
@@ -34,12 +35,11 @@ namespace Quizzator.Quizzator.Models
                 throw new Exception("Explication est vide!");
             }
         }
-
-        public string GetExplication()
-        {
-            return _explication;
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="texte"></param>
+        /// <exception cref="Exception"></exception>
         public void SetTexte(string texte)
         {
             if (texte != null || texte == string.Empty)
@@ -78,5 +78,6 @@ namespace Quizzator.Quizzator.Models
                 throw new Exception("Erreur saisie lien");
             }
         }
+
     }
 }
