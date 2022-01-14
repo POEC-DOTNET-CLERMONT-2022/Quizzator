@@ -12,10 +12,12 @@ namespace Quizzator.Quizzator.Dtos
         private string _ImagePath { get; set; }
         private bool _isTroll { get; set; }
 
-        public ReponseDtos(string texte, string explication, bool istroll)
+        public ReponseDtos(string texte, string explication, List<string> Lien, string ImagePath, bool istroll)
         {
             _Texte=texte;
             _Explication=explication;
+            _ImagePath=ImagePath;
+            _Lien=Lien;
             _isTroll = istroll;
         }
 

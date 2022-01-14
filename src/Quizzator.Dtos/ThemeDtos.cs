@@ -9,6 +9,7 @@ namespace Quizzator.Quizzator.Dtos
         public string _Name { get; set; }
         public List<QuestionDtos> _Question { get; set; }
         public string _ImagePath { get; set; }
+        public bool IsVisible { get; set; }
 
         public ThemeDtos(string name, string imagePath)
         {
