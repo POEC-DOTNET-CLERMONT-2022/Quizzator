@@ -9,6 +9,7 @@ namespace Quizzator.Quizzator.Models
         private string _texte { get; set; }
         private string _explication { get; set; }
         private List<string> _lien { get; } =  new List<string>();
+        private string _ImagePath { get; set; } 
         private bool _isTroll { get; set; }
 
         public Reponse(string texte, string explication, bool istroll)

@@ -6,12 +6,12 @@ namespace Quizzator.Quizzator.Models
     {
         public string _name { get; set; }
         public List<Question> _question { get; set; }
-        public string _imagePath { get; set; }
+        public string _ImagePath { get; set; }
 
         public ThemeEx(string name, string imagePath)
         {
             _name = name;
-            _imagePath = imagePath;
+            _ImagePath = imagePath;
             // TODO Check si cela ne va pas causer un conflit
             _question = new List<Question>();
         }

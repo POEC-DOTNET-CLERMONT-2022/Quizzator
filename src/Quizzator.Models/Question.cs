@@ -7,7 +7,7 @@ namespace Quizzator.Quizzator.Models
     {
         private int _id { get; set; }
         private string _texte { get; set; }
-        private string _pathImage { get; set; }
+        private string ImagePath { get; set; }
        private List<Reponse> _reponseList { get; set; }
         
 
@@ -16,7 +16,7 @@ namespace Quizzator.Quizzator.Models
         {
             _id = Id;
             _texte = Texte;
-            _pathImage = PathImage;
+            ImagePath = PathImage;
             // TODO Verif ReponseList avant de la passer dans le constructeur
             _reponseList = VerifReponse(ReponseList);
         }
