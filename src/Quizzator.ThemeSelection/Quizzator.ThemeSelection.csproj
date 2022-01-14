@@ -10,7 +10,6 @@
   <ItemGroup>
     <None Remove="background.jpg" />
     <None Remove="istockphoto-1180542165-612x612.jpg" />
-    <None Remove="ViewConnexion_Btn.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +24,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="istockphoto-1180542165-612x612.jpg" />
-    <Resource Include="ViewConnexion_Btn.jpg" />
   </ItemGroup>
 
 </Project>

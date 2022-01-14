@@ -23,7 +23,7 @@
             <MenuItem>Deconnection</MenuItem>
         </Menu>
         <ContentControl Grid.Row="1" Grid.ColumnSpan="2">
-            <local:ThemeControl></local:ThemeControl>
+            <local:ViewSignUp></local:ViewSignUp>
 
         </ContentControl>
     </Grid>
