@@ -1,5 +1,4 @@
-﻿using ServiceReference1;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Quizzator.ThemeSelection
 {
@@ -8,15 +7,10 @@ namespace Quizzator.ThemeSelection
     /// </summary>
     public partial class MainWindow : Window
     {
-        public IThemeService ThemeServiceClient { get; }
+
         public MainWindow()
         {
-            if (Application.Current is App app)
-            {
-                ThemeServiceClient = app.ThemeServiceClient;
-            }
             InitializeComponent();
-            // NomTheme.IemsSource = ThemeServiceClient.GetData(12);
         }
     }
 }

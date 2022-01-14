@@ -1,4 +1,4 @@
-﻿using ServiceReference1;
+﻿
 using System.Windows;
 
 namespace Quizzator.ThemeSelection
@@ -8,10 +8,9 @@ namespace Quizzator.ThemeSelection
     /// </summary>
     public partial class App : Application
     {
-        public ThemeServiceClient ThemeServiceClient { get; }
         public App()
         {
-            ThemeServiceClient = new ThemeServiceClient();
+            
             
         }
     }
