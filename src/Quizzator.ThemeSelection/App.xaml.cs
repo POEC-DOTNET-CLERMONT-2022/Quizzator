@@ -1,7 +1,7 @@
 ﻿using ServiceReference1;
 using System.Windows;
 
-namespace ThemeSelection
+namespace Quizzator.ThemeSelection
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ThemeSelection
+namespace Quizzator.ThemeSelection
 {
     /// <summary>
     /// Interaction logic for MainControl.xaml
