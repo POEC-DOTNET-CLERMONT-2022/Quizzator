@@ -6,9 +6,9 @@ namespace Quizzator.Quizzator.Models
     public sealed class Reponse
     {
         #region Init
-        private string _texte { get; set; }
-        private string _explication { get; set; }
-        private List<string> _lien { get; } =  new List<string>();
+        private string _Texte { get; set; }
+        private string _Explication { get; set; }
+        private List<string> _Lien { get; } =  new List<string>();
         private string _ImagePath { get; set; } 
         private bool _isTroll { get; set; }
 
@@ -29,7 +29,7 @@ namespace Quizzator.Quizzator.Models
         {
             if (explication != null || explication == string.Empty)
             {
-                _explication = explication;
+                _Explication = explication;
             }
             else
             {
@@ -45,7 +45,7 @@ namespace Quizzator.Quizzator.Models
         {
             if (texte != null || texte == string.Empty)
             {
-                _texte = texte;
+                _Texte = texte;
             }
             else
             {
@@ -54,7 +54,7 @@ namespace Quizzator.Quizzator.Models
         }
         public string GetTexte()
         {
-            return _texte;
+            return _Texte;
         }
         /// <summary>
         /// 
@@ -65,9 +65,9 @@ namespace Quizzator.Quizzator.Models
         {
             if (Uri.IsWellFormedUriString(link, UriKind.Absolute))
             {
-                if (_lien.Count < 2)
+                if (_Lien.Count < 2)
                 {
-                    _lien.Add(link);
+                    _Lien.Add(link);
                 }
                 else
                 {

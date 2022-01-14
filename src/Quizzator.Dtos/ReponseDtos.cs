@@ -6,15 +6,16 @@ namespace Quizzator.Quizzator.Dtos
 
     public class ReponseDtos
     {
-        private string _texte { get; set; }
-        private string _explication { get; set; }
-        private List<string> _lien { get; } = new List<string>();
+        private string _Texte { get; set; }
+        private string _Explication { get; set; }
+        private List<string> _Lien { get; } = new List<string>();
+        private string _ImagePath { get; set; }
         private bool _isTroll { get; set; }
 
         public ReponseDtos(string texte, string explication, bool istroll)
         {
-            _texte=texte;
-            _explication=explication;
+            _Texte=texte;
+            _Explication=explication;
             _isTroll = istroll;
         }
 
