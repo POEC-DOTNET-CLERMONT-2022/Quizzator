@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoFixture;
+using Quizzator.Quizzator.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +27,8 @@ namespace View
         internal UCViewConnexion UCViewConnexion { get; set; } = new UCViewConnexion();
         internal UCViewMainPage UCViewMainPage { get; set; } = new UCViewMainPage();
         internal UCViewSignUp UCViewSignUp { get; set; } = new UCViewSignUp();
-
+        //Fixture fixture = new Fixture();
+        //internal List<ThemeEx> ListTheme = new List<ThemeEx>();
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +36,17 @@ namespace View
 
             UCViewConnexion.gotoViewSignUp += gotoViewSignUp;
             UCViewConnexion.gotoMainPage += gotoMainPage;
+            UCViewSignUp.gotoViewConnexion += gotoViewConnexion;
+            UCViewSignUp.gotoMainPage2 += gotoMainPage;
+
+           /* ListTheme = fixture.CreateMany<ThemeEx>(15).ToList();
+            DataContext = ListTheme;*/
+
+        }
+
+        private void gotoViewConnexion(object sender, RoutedEventArgs e)
+        {
+            ContentControl.Content = UCViewConnexion;
         }
 
         private void gotoMainPage(object sender, RoutedEventArgs e)

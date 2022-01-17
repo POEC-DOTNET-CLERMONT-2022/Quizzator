@@ -25,11 +25,18 @@ namespace View.UserControls
             InitializeComponent();
         }
 
-        /*//Event go to MainPage
-        internal static readonly RoutedEvent gotoMainPageEvent = EventManager.RegisterRoutedEvent(
-            "gotoMainPage", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewConnexion));
+        public void ResetDefaultText(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= ResetDefaultText;
+        }
 
-        internal event RoutedEventHandler gotoMainPage
+        //Event go to MainPage
+        internal static readonly RoutedEvent gotoMainPageEvent = EventManager.RegisterRoutedEvent(
+            "gotoMainPage2", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewConnexion));
+
+        internal event RoutedEventHandler gotoMainPage2
         {
             add { AddHandler(gotoMainPageEvent, value); }
             remove { RemoveHandler(gotoMainPageEvent, value); }
@@ -38,6 +45,20 @@ namespace View.UserControls
         internal void gotoMainPageClick(Object sender, RoutedEventArgs e)
         {
             RaiseEvent(new RoutedEventArgs(gotoMainPageEvent));
-        }*/
+        }
+
+        internal static readonly RoutedEvent gotoViewConnexionEvent = EventManager.RegisterRoutedEvent(
+            "gotoViewConnexion", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewConnexion));
+
+        internal event RoutedEventHandler gotoViewConnexion
+        {
+            add { AddHandler(gotoViewConnexionEvent, value); }
+            remove { RemoveHandler(gotoViewConnexionEvent, value); }
+        }
+
+        internal void gotoViewConnexionClick(Object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(gotoViewConnexionEvent));
+        }
     }
 }

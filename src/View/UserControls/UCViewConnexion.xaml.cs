@@ -24,6 +24,13 @@ namespace View.UserControls
         {
             InitializeComponent();
         }
+
+        public void ResetDefaultText(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= ResetDefaultText;
+        }
         //Event go to MainPage
         internal static readonly RoutedEvent gotoMainPageEvent = EventManager.RegisterRoutedEvent(
             "gotoMainPage", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewConnexion));

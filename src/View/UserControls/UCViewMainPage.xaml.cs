@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoFixture;
+using Quizzator.Quizzator.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,15 @@ namespace View.UserControls
     /// </summary>
     public partial class UCViewMainPage : UserControl
     {
+
+        Fixture fixture = new Fixture();
+        internal List<ThemeEx> ListThem;
         public UCViewMainPage()
         {
             InitializeComponent();
+
+            ListThem = fixture.CreateMany<ThemeEx>(15).ToList();
+            ListTheme.ItemsSource = ListThem;
         }
     }
 }
