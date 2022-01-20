@@ -4,9 +4,8 @@ using Quizzator.Quizzator.Models;
 
 namespace Quizzator.Persistance
 {
-    public class ThemeManager : IThemeManager
+    public class ThemeManager
     {
-        
         private readonly Fixture _fixture = new Fixture();
 
         public IEnumerable<ThemeEx> GetAllTheme()

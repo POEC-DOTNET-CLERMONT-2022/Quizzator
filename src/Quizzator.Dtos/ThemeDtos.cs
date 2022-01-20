@@ -6,6 +6,7 @@ namespace Quizzator.Quizzator.Dtos
     [DataContract]
     public class ThemeDtos
     {
+        public object ThemeId { get; set; }
         public string _Name { get; set; }
         public List<QuestionDtos> _Question { get; set; }
         public string _ImagePath { get; set; }
