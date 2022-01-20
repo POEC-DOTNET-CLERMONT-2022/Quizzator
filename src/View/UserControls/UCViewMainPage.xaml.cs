@@ -29,8 +29,22 @@ namespace View.UserControls
         {
             InitializeComponent();
 
-            ListThem = fixture.CreateMany<ThemeEx>(15).ToList();
+            ListThem = fixture.CreateMany<ThemeEx>(150).ToList();
             ListTheme.ItemsSource = ListThem;
+        }
+
+        internal static readonly RoutedEvent gotoViewQuestionEvent = EventManager.RegisterRoutedEvent(
+            "gotoViewQuestion", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewQuestion));
+
+        internal event RoutedEventHandler gotoViewQuestion
+        {
+            add { AddHandler(gotoViewQuestionEvent, value); }
+            remove { RemoveHandler(gotoViewQuestionEvent, value); }
+        }
+
+        internal void gotoViewQuestionClick(Object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(gotoViewQuestionEvent));
         }
     }
 }

@@ -27,6 +27,7 @@ namespace View
         internal UCViewConnexion UCViewConnexion { get; set; } = new UCViewConnexion();
         internal UCViewMainPage UCViewMainPage { get; set; } = new UCViewMainPage();
         internal UCViewSignUp UCViewSignUp { get; set; } = new UCViewSignUp();
+        internal UCViewQuestion UCViewQuestion { get; set; } = new UCViewQuestion();
         //Fixture fixture = new Fixture();
         //internal List<ThemeEx> ListTheme = new List<ThemeEx>();
         public MainWindow()
@@ -38,6 +39,8 @@ namespace View
             UCViewConnexion.gotoMainPage += gotoMainPage;
             UCViewSignUp.gotoViewConnexion += gotoViewConnexion;
             UCViewSignUp.gotoMainPage2 += gotoMainPage;
+            UCViewMainPage.gotoViewQuestion += gotoViewQuestion;
+
 
            /* ListTheme = fixture.CreateMany<ThemeEx>(15).ToList();
             DataContext = ListTheme;*/
@@ -59,6 +62,12 @@ namespace View
             ContentControl.Content = UCViewSignUp;
         }
 
-        
+        private void gotoViewQuestion(object sender, RoutedEventArgs e)
+        {
+            ContentControl.Content = UCViewQuestion;
+        }
+
+
+
     }
 }
