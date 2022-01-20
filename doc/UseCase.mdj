@@ -3518,9 +3518,9 @@
 										"$ref": "AAAAAAF94SYxfS67EYI="
 									},
 									"font": "Arial;13;0",
-									"left": 848,
+									"left": 847,
 									"top": 200,
-									"width": 5.05908203125,
+									"width": 6.5,
 									"height": 13,
 									"alpha": -0.08036345588479196,
 									"distance": 149.4824404403407,
@@ -7877,8 +7877,8 @@
 								"$ref": "AAAAAAF9vkMhERe50Ok="
 							},
 							"font": "Arial;13;0",
-							"left": 152,
-							"top": 616,
+							"left": 208,
+							"top": 472,
 							"width": 82.13720703125,
 							"height": 142,
 							"text": "Tous les utilisateurs doivent se connecter pour effectuer ces actions"
@@ -11201,33 +11201,6 @@
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9vkta+yJYutc=",
-							"_parent": {
-								"$ref": "AAAAAAF9vkMqThfb40E="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vkta+yJZGm8=",
-								"_parent": {
-									"$ref": "AAAAAAF9vkta+yJYutc="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vkMqThfb40E="
-								}
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vkta+yJaSTA=",
-								"_parent": {
-									"$ref": "AAAAAAF9vkta+yJYutc="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vkNCrRgFtaw="
-								}
-							}
-						},
-						{
-							"_type": "UMLAssociation",
 							"_id": "AAAAAAF9vktr6yKbQjU=",
 							"_parent": {
 								"$ref": "AAAAAAF9vkMqThfb40E="
@@ -11331,33 +11304,6 @@
 								},
 								"reference": {
 									"$ref": "AAAAAAF9vkkDMSIoMD0="
-								}
-							}
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9vk9BWzhXr+Y=",
-							"_parent": {
-								"$ref": "AAAAAAF9vkMqThfb40E="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vk9BXDhYgms=",
-								"_parent": {
-									"$ref": "AAAAAAF9vk9BWzhXr+Y="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vkMqThfb40E="
-								}
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vk9BXDhZ6p8=",
-								"_parent": {
-									"$ref": "AAAAAAF9vk9BWzhXr+Y="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vk8mHzeWtkU="
 								}
 							}
 						},
@@ -11500,14 +11446,6 @@
 				},
 				{
 					"_type": "UMLUseCase",
-					"_id": "AAAAAAF9vkNCrRgFtaw=",
-					"_parent": {
-						"$ref": "AAAAAAF9vkMhEBe4yLc="
-					},
-					"name": "se Connecter"
-				},
-				{
-					"_type": "UMLUseCase",
 					"_id": "AAAAAAF9vkN4jBg0TJA=",
 					"_parent": {
 						"$ref": "AAAAAAF9vkMhEBe4yLc="
@@ -11646,60 +11584,6 @@
 									"$ref": "AAAAAAF9vkylkihDy0g="
 								}
 							}
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9vk5yAy6FC+8=",
-							"_parent": {
-								"$ref": "AAAAAAF9vkewISFlSxA="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vk5yAy6GoRc=",
-								"_parent": {
-									"$ref": "AAAAAAF9vk5yAy6FC+8="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vkewISFlSxA="
-								}
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vk5yAy6HhZc=",
-								"_parent": {
-									"$ref": "AAAAAAF9vk5yAy6FC+8="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vk4rqC1nCak="
-								}
-							}
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9vk9NtjkD5Cc=",
-							"_parent": {
-								"$ref": "AAAAAAF9vkewISFlSxA="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vk9NtjkEBWo=",
-								"_parent": {
-									"$ref": "AAAAAAF9vk9NtjkD5Cc="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vkewISFlSxA="
-								}
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9vk9NtjkFYEE=",
-								"_parent": {
-									"$ref": "AAAAAAF9vk9NtjkD5Cc="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9vk8mHzeWtkU="
-								}
-							}
 						}
 					]
 				},
@@ -11734,22 +11618,6 @@
 						"$ref": "AAAAAAF9vkMhEBe4yLc="
 					},
 					"name": "gerer reponse"
-				},
-				{
-					"_type": "UMLUseCase",
-					"_id": "AAAAAAF9vk4rqC1nCak=",
-					"_parent": {
-						"$ref": "AAAAAAF9vkMhEBe4yLc="
-					},
-					"name": "se Connecter"
-				},
-				{
-					"_type": "UMLUseCase",
-					"_id": "AAAAAAF9vk8mHzeWtkU=",
-					"_parent": {
-						"$ref": "AAAAAAF9vkMhEBe4yLc="
-					},
-					"name": "se connecter"
 				},
 				{
 					"_type": "UMLUseCase",
