@@ -40,6 +40,7 @@ namespace View
             UCViewSignUp.gotoViewConnexion += gotoViewConnexion;
             UCViewSignUp.gotoMainPage2 += gotoMainPage;
             UCViewMainPage.gotoViewQuestion += gotoViewQuestion;
+            UCViewQuestion.gotoMainPage += gotoMainPage;
 
 
            /* ListTheme = fixture.CreateMany<ThemeEx>(15).ToList();

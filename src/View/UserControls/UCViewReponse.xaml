@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="View.UserControls.UCViewQuestion"
+﻿<UserControl x:Class="View.UserControls.UCViewReponse"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -33,18 +33,26 @@
         </Image>
         <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="16*"></RowDefinition>
-                <RowDefinition Height="16*"></RowDefinition>
-                <RowDefinition Height="16*"></RowDefinition>
-                <RowDefinition Height="16*"></RowDefinition>
-                <RowDefinition Height="16*"></RowDefinition>
-                <RowDefinition Height="16*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="1" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Question"></TextBlock>
-            <Button Grid.Row="2" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Réponse 1"></Button>
-            <Button Grid.Row="3" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Réponse 2"></Button>
-            <Button Grid.Row="4" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Réponse 3"></Button>
-            <Button Grid.Row="5" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Réponse 4"></Button>
-        </Grid>
+            <TextBlock Grid.Row="0" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="N° Question ?"></TextBlock>
+            <TextBlock Grid.Row="1" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Réponse"></TextBlock>
+            <TextBlock Grid.Row="2" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Explication"></TextBlock>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"></RowDefinition>
+                    <RowDefinition Height="20*"></RowDefinition>
+                    <RowDefinition Height="20*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Lien 1"></TextBlock>
+                <TextBlock Grid.Row="1" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Lien 2"></TextBlock>
+                <TextBlock Grid.Row="3" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Lien 3"></TextBlock>
+            </Grid>
+            <Button Grid.Row="5" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Question suivante"></Button>
+           </Grid>
     </Grid>
 </UserControl>

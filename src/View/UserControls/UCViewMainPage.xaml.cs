@@ -29,8 +29,9 @@ namespace View.UserControls
         {
             InitializeComponent();
 
-            ListThem = fixture.CreateMany<ThemeEx>(150).ToList();
+            ListThem = fixture.CreateMany<ThemeEx>(10).ToList();
             ListTheme.ItemsSource = ListThem;
+            
         }
 
         internal static readonly RoutedEvent gotoViewQuestionEvent = EventManager.RegisterRoutedEvent(
