@@ -7,7 +7,7 @@ namespace Quizzator.Quizzator.Models
     {
 
         #region Init
-        public string _Name;
+        public string _Name { get; }
         public List<Question> _Question;
         public string _ImagePath;
         public bool IsVisible;
@@ -23,10 +23,10 @@ namespace Quizzator.Quizzator.Models
         {
             return _Name;
         }
-        public void setName(string name)
+        /*public void setName(string name)
         {
             _Name = name;
-        }
+        }*/
         public string getImagePath() 
         {
             return _ImagePath;

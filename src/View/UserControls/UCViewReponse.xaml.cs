@@ -20,9 +20,25 @@ namespace View.UserControls
     /// </summary>
     public partial class UCViewReponse : UserControl
     {
+        private int cpt = 1;
         public UCViewReponse()
         {
             InitializeComponent();
+        }
+
+        internal static readonly RoutedEvent gotoQuestionEvent = EventManager.RegisterRoutedEvent(
+            "gotoNextQuestion", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewConnexion));
+
+        internal event RoutedEventHandler gotoNextQuestion
+        {
+            add { AddHandler(gotoQuestionEvent, value); }
+            remove { RemoveHandler(gotoQuestionEvent, value); }
+        }
+
+        internal void gotoNextQuestionClick(Object sender, RoutedEventArgs e)
+        {
+            cpt++;
+            RaiseEvent(new RoutedEventArgs(gotoQuestionEvent));
         }
     }
 }

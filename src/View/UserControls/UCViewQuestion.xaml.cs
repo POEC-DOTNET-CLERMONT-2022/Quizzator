@@ -20,9 +20,16 @@ namespace View.UserControls
     /// </summary>
     public partial class UCViewQuestion : UserControl
     {
+
+        internal int CptQuestion { get; set; } 
+        internal string Txt { get; set; }
         public UCViewQuestion()
         {
             InitializeComponent();
+            CptQuestion = 1;
+            Txt = CptQuestion.ToString();
+            
+            
         }
 
         internal static readonly RoutedEvent gotoMainPageEvent = EventManager.RegisterRoutedEvent(
@@ -37,6 +44,21 @@ namespace View.UserControls
         internal void gotoMainPageClick(Object sender, RoutedEventArgs e)
         {
             RaiseEvent(new RoutedEventArgs(gotoMainPageEvent));
+        }
+
+        internal static readonly RoutedEvent gotoReponseEvent = EventManager.RegisterRoutedEvent(
+            "gotoReponse", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewConnexion));
+
+        internal event RoutedEventHandler gotoReponse
+        {
+            add { AddHandler(gotoReponseEvent, value); }
+            remove { RemoveHandler(gotoReponseEvent, value); }
+        }
+
+        internal void gotoReponseClick(Object sender, RoutedEventArgs e)
+        {
+            CptQuestion++;
+            RaiseEvent(new RoutedEventArgs(gotoReponseEvent));
         }
     }
 }

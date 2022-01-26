@@ -20,9 +20,13 @@ namespace View.UserControls
     /// </summary>
     public partial class UCViewEndQuiz : UserControl
     {
+
+       
         public UCViewEndQuiz()
         {
             InitializeComponent();
         }
+
+
     }
 }

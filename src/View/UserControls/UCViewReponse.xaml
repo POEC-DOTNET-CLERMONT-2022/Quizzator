@@ -20,7 +20,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/UserControls/BGVCVSU.jpg" Stretch="Fill" Opacity="1"/>
         </Grid.Background>
-        <Button Click="gotoMainPageClick"  Grid.Row="0" Grid.Column="3" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Home"></Button>
+        <Button   Grid.Row="0" Grid.Column="3" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Home"></Button>
         <Image Grid.Row="1" Grid.Column="0" Source="/UserControls/HTR.jpg" >
             <Image.OpacityMask>
                 <LinearGradientBrush StartPoint="0.1,0.1" EndPoint="0.75,0.75">
@@ -52,7 +52,7 @@
                 <TextBlock Grid.Row="1" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Lien 2"></TextBlock>
                 <TextBlock Grid.Row="3" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Lien 3"></TextBlock>
             </Grid>
-            <Button Grid.Row="5" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Question suivante"></Button>
+            <Button Click="gotoNextQuestionClick" Grid.Row="5" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Question suivante"></Button>
            </Grid>
     </Grid>
 </UserControl>

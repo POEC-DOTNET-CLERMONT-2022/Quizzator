@@ -17,7 +17,8 @@ namespace Quizzator.Quizzator.Models
             setTexte(Texte);
             setImagePath(PathImage);
             // TODO Verif ReponseList avant de la passer dans le constructeur
-            _ReponseList = VerifReponse(ReponseList);
+            //_ReponseList = VerifReponse(ReponseList);
+            _ReponseList = new List<Reponse>();
         }
         public Question(int Id, string Texte, string PathImage, List<Reponse> ReponseList) : this(Texte, PathImage, ReponseList)
         {
