@@ -12,7 +12,7 @@ using Quizzator.Persistance;
 namespace Quizzator.Persistance.Migrations
 {
     [DbContext(typeof(QuizContext))]
-    [Migration("20220120094715_InitialCreate")]
+    [Migration("20220126095620_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
