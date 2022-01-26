@@ -1,31 +1,17 @@
-﻿using System;
+﻿using AutoFixture;
 using System.Collections.Generic;
-using System.Linq;
-using Quizzator.Entity;
+using Quizzator.Quizzator.Models;
 
 namespace Quizzator.Persistance
 {
     public class ThemeManager
     {
-        private readonly QuizContext _context;
-        public ThemeManager (QuizContext QuizContext)
+        private readonly Fixture _fixture = new Fixture();
+
+        public IEnumerable<ThemeEx> GetAllTheme()
         {
-            this._context = QuizContext;    
+            return _fixture.CreateMany<ThemeEx>(5);
         }
 
-        public ThemeManager()
-        {
-        }
-
-        public IEnumerable<ThemeExEntity>GetAllTheme()
-        {
-            var query = _context.ThemeEx.AsEnumerable();
-            return query;
-        }
-        public ThemeExEntity Get (Guid id)
-        {
-            return _context.Set<ThemeExEntity>().Find(id);
-        }
-    
     }
 }

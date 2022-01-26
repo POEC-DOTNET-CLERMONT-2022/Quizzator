@@ -3,20 +3,13 @@ using Quizzator.Entity;
 
 namespace Quizzator.Persistance
 {
-
+    
     public class QuizContext : DbContext
     {
         public DbSet<ThemeExEntity> ThemeEx { get; set; }
         public DbSet<QuestionEntity> Questions { get; set; }
         public DbSet<ReponseEntity> Reponses { get; set; }
         public DbSet<LinksEntity> Links { get; set; }
-        public QuizContext()
-        {
-
-        }
-        public QuizContext(DbContextOptions opt):base(opt)
-        {
-        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test; Trusted_Connection=True",
