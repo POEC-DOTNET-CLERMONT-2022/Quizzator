@@ -1,24 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Quizzator.Quizzator.Dtos
 {
 
         public class QuestionDtos
         {
-            private int _Id { get; set; }
-            private string _Texte { get; set; }
-            private string _ImagePath { get; set; }
-            private List<ReponseDtos> _ReponseList { get; set; }
+            public Guid Id { get; set; }
+            public string Texte { get; set; }
+            public string ImagePath { get; set; }
+            public IEnumerable<ReponseDtos> ReponseList { get; set; }
 
 
 
-            public QuestionDtos(int Id, string Texte, string ImagePath, List<ReponseDtos> ReponseList)
+            public QuestionDtos(Guid id, string texte, string imagePath, List<ReponseDtos> reponseList)
             {
-                _Id = Id;
-                _Texte = Texte;
-                _ImagePath = ImagePath;
+                Id = id;
+                Texte = texte;
+                ImagePath = imagePath;
                 // TODO Verif ReponseList avant de la passer dans le constructeur
-                _ReponseList = ReponseList;
+                ReponseList = reponseList;
             }
         
         }

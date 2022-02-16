@@ -12,7 +12,7 @@ using Quizzator.Persistance;
 namespace Quizzator.Persistance.Migrations
 {
     [DbContext(typeof(QuizContext))]
-    [Migration("20220126095620_InitialCreate")]
+    [Migration("20220216151702_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,92 +26,83 @@ namespace Quizzator.Persistance.Migrations
 
             modelBuilder.Entity("Quizzator.Entity.LinksEntity", b =>
                 {
-                    b.Property<Guid>("_Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Element")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("Links")
+                    b.Property<Guid>("ReponseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("_Id")
+                    b.HasKey("Id")
                         .HasName("PrimaryKey_LinksId");
 
-                    b.HasIndex("Links");
+                    b.HasIndex("ReponseId");
 
                     b.ToTable("Links");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.QuestionEntity", b =>
                 {
-                    b.Property<Guid>("_Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("Question")
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Texte")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ThemeId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("_ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("_Texte")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("_Id")
+                    b.HasKey("Id")
                         .HasName("PrimaryKey_QuestionId");
 
-                    b.HasIndex("Question");
+                    b.HasIndex("ThemeId");
 
                     b.ToTable("Questions");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.ReponseEntity", b =>
                 {
-                    b.Property<Guid>("_Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("Reponse")
+                    b.Property<string>("Explication")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("QuestionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("_Explication")
+                    b.Property<string>("Texte")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("_ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("_Texte")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("_isTroll")
-                        .HasColumnType("bit");
-
-                    b.HasKey("_Id")
+                    b.HasKey("Id")
                         .HasName("PrimaryKey_ReponseId");
 
-                    b.HasIndex("Reponse");
+                    b.HasIndex("QuestionId");
 
                     b.ToTable("Reponses");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.ThemeExEntity", b =>
                 {
-                    b.Property<Guid>("_Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("IsVisible")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("_ImagePath")
+                    b.Property<string>("ThemeName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("_Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("_Id")
+                    b.HasKey("Id")
                         .HasName("PrimaryKey_ThemeId");
 
                     b.ToTable("ThemeEx");
@@ -120,9 +111,10 @@ namespace Quizzator.Persistance.Migrations
             modelBuilder.Entity("Quizzator.Entity.LinksEntity", b =>
                 {
                     b.HasOne("Quizzator.Entity.ReponseEntity", "Reponse")
-                        .WithMany("_Lien")
-                        .HasForeignKey("Links")
-                        .HasConstraintName("Link_In_Response");
+                        .WithMany("Liens")
+                        .HasForeignKey("ReponseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Reponse");
                 });
@@ -130,9 +122,10 @@ namespace Quizzator.Persistance.Migrations
             modelBuilder.Entity("Quizzator.Entity.QuestionEntity", b =>
                 {
                     b.HasOne("Quizzator.Entity.ThemeExEntity", "ThemeEx")
-                        .WithMany("_Questions")
-                        .HasForeignKey("Question")
-                        .HasConstraintName("Question_In_Theme");
+                        .WithMany("Questions")
+                        .HasForeignKey("ThemeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("ThemeEx");
                 });
@@ -140,26 +133,27 @@ namespace Quizzator.Persistance.Migrations
             modelBuilder.Entity("Quizzator.Entity.ReponseEntity", b =>
                 {
                     b.HasOne("Quizzator.Entity.QuestionEntity", "Question")
-                        .WithMany("_ReponseList")
-                        .HasForeignKey("Reponse")
-                        .HasConstraintName("Reponses_In_Question");
+                        .WithMany("ReponseList")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Question");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.QuestionEntity", b =>
                 {
-                    b.Navigation("_ReponseList");
+                    b.Navigation("ReponseList");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.ReponseEntity", b =>
                 {
-                    b.Navigation("_Lien");
+                    b.Navigation("Liens");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.ThemeExEntity", b =>
                 {
-                    b.Navigation("_Questions");
+                    b.Navigation("Questions");
                 });
 #pragma warning restore 612, 618
         }

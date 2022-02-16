@@ -6,23 +6,25 @@ namespace Quizzator.Quizzator.Dtos
     [DataContract]
     public class ThemeDtos
     {
-        public object ThemeId { get; set; }
-        public string _Name { get; set; }
-        public List<QuestionDtos> _Question { get; set; }
-        public string _ImagePath { get; set; }
+        public object Id { get; set; }
+        public string ThemeName { get; set; }
+        public IEnumerable<QuestionDtos> Questions { get; set; }
+        public string ImagePath { get; set; }
         public bool IsVisible { get; set; }
 
-        public ThemeDtos(string name, string imagePath)
+        public ThemeDtos()
         {
-            _Name = name;
-            _ImagePath = imagePath;
-            // TODO Check si cela ne va pas causer un conflit
-            _Question = new List<QuestionDtos>();
+
         }
 
-        public ThemeDtos(string name, string imagePath, List<QuestionDtos> l) : this(name, imagePath)
+        public ThemeDtos(string name, string imagePath, IEnumerable<QuestionDtos> question)
         {
-            _Question = l;
+            ThemeName = name;
+            ImagePath = imagePath;
+            // TODO Check si cela ne va pas causer un conflit
+            Questions = question;
         }
+
+       
     }
 }

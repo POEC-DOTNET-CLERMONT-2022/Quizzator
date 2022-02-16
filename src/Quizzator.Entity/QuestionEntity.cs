@@ -7,11 +7,12 @@ namespace Quizzator.Entity
     {
 
 
-        public Guid _Id { get; set; }
-        public string _Texte { get; set; }
-        public string _ImagePath { get; set; }
-        public List<ReponseEntity> _ReponseList { get; set; }
+        public Guid Id { get; set; }
+        public string Texte { get; set; }
+        public string ImagePath { get; set; }
+        public ICollection<ReponseEntity> ReponseList { get; set; }
         public ThemeExEntity ThemeEx { get; set; }
+        public Guid ThemeId { get; set; } 
 
     }
 }

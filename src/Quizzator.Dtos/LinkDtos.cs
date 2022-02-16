@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Quizzator.Quizzator.Dtos
 {
-    internal class LinkDtos
+    public class LinkDtos
     {
         public Guid LinkId { get; set; }
         public string Element { get; set; }
-        public ReponseDtos Reponse { get; set; }
 
     }
 }

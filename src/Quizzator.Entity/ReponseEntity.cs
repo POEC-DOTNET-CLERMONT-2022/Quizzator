@@ -5,12 +5,13 @@ namespace Quizzator.Entity
 {
     public class ReponseEntity
     {
-        public Guid _Id { get; set; }
-        public string _Texte { get; set; }
-        public string _Explication { get; set; }
-        public List<LinksEntity> _Lien { get; } = new List<LinksEntity>();
-        public string _ImagePath { get; set; }
-        public bool _isTroll { get; set; }
+        public Guid Id { get; set; }
+        public string Texte { get; set; }
+        public string Explication { get; set; }
+        public ICollection<LinksEntity> Liens { get; }
+        public string ImagePath { get; set; }
         public QuestionEntity Question { get; set; }
+
+        public Guid QuestionId { get; set; }
     }
 }

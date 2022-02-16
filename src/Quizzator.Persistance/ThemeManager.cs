@@ -7,10 +7,10 @@ namespace Quizzator.Persistance
 {
     public class ThemeManager
     {
-        private readonly QuizContext _context;
+        private readonly QuizContext Context;
         public ThemeManager (QuizContext QuizContext)
         {
-            this._context = QuizContext;    
+            this.Context = QuizContext;    
         }
 
         public ThemeManager()
@@ -18,13 +18,12 @@ namespace Quizzator.Persistance
         }
 
         public IEnumerable<ThemeExEntity>GetAllTheme()
-        {
-            var query = _context.ThemeEx.AsEnumerable();
-            return query;
+        {    
+            return Context.Set<ThemeExEntity>().ToList();
         }
         public ThemeExEntity Get (Guid id)
         {
-            return _context.Set<ThemeExEntity>().Find(id);
+            return Context.Set<ThemeExEntity>().Find(id);
         }
     
     }

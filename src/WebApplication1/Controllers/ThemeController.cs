@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Quizzator.Entity;
 using Quizzator.Persistance;
 using Quizzator.Quizzator.Dtos;
 
@@ -12,13 +13,13 @@ namespace Quizzator.API_REST.Controllers
     public class ThemeController : ControllerBase
     {
 
-        private readonly ThemeManager _quizzRepository;
-        private readonly IMapper _mapper;
+        private readonly ThemeManager QuizzRepository;
+        private readonly IMapper Mapper;
 
         public ThemeController(ThemeManager quizzRepository, IMapper mapper)
         {
-            _quizzRepository = quizzRepository;
-            _mapper = mapper;
+            QuizzRepository = quizzRepository;
+            Mapper = mapper;
         }
 
         // GET: api/<ThemeController>
@@ -29,16 +30,13 @@ namespace Quizzator.API_REST.Controllers
         {
             try
             {
-                IEnumerable<Entity.ThemeExEntity> l = _quizzRepository.GetAllTheme();
-                var dto = _mapper.Map<IEnumerable<ThemeDtos>>(l);
+                IEnumerable<ThemeExEntity> l = QuizzRepository.GetAllTheme();
+                var dto = Mapper.Map<IEnumerable<ThemeDtos>>(l);
                 if (dto == null)
                 {
                     return BadRequest();
                 }
-                else
-                {
-                    return Ok(dto);
-                }
+                return Ok(dto);
 
             }
             catch (Exception e)
@@ -55,8 +53,8 @@ namespace Quizzator.API_REST.Controllers
         {
             try
              {
-                 var ThemeExEntity = _quizzRepository.Get(id);
-                 var dto = _mapper.Map<ThemeDtos>(ThemeExEntity);
+                 var ThemeExEntity = QuizzRepository.Get(id);
+                 var dto = Mapper.Map<ThemeDtos>(ThemeExEntity);
                  return Ok(dto);
              }
              catch (Exception e)

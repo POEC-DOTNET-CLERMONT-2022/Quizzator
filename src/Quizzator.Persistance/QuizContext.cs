@@ -26,56 +26,65 @@ namespace Quizzator.Persistance
         {
             modelBuilder.Entity<ThemeExEntity>(eb =>
             {
-                eb.HasKey(t => t._Id)
+                eb.HasKey(t => t.Id)
                   .HasName("PrimaryKey_ThemeId");
 
-                eb.Property(t => t._Id)
+                eb.Property(t => t.Id)
                   .ValueGeneratedOnAdd();
             });
             modelBuilder.Entity<QuestionEntity>(eb =>
             {
-                eb.HasKey(q => q._Id)
+                eb.HasKey(q => q.Id)
                   .HasName("PrimaryKey_QuestionId");
-                eb.Property(q => q._Id)
+                eb.Property(q => q.Id)
                   .ValueGeneratedOnAdd();
             });
             modelBuilder.Entity<ReponseEntity>(eb =>
             {
-                eb.HasKey(r => r._Id)
+                eb.HasKey(r => r.Id)
                   .HasName("PrimaryKey_ReponseId");
-                eb.Property(q => q._Id)
+                eb.Property(q => q.Id)
                   .ValueGeneratedOnAdd();
             });
             modelBuilder.Entity<LinksEntity>(eb =>
             {
-                eb.HasKey(l => l._Id)
+                eb.HasKey(l => l.Id)
                   .HasName("PrimaryKey_LinksId");
-                eb.Property(q => q._Id)
+                eb.Property(q => q.Id)
                   .ValueGeneratedOnAdd();
 
             });
 
+            
+
 
             modelBuilder.Entity<ThemeExEntity>()
-                .HasMany(q => q._Questions);
+                .HasMany(t => t.Questions)
+                .WithOne(q => q.ThemeEx)
+                .HasForeignKey(q => q.ThemeId);
+
             modelBuilder.Entity<QuestionEntity>()
-                .HasMany(r => r._ReponseList);
-            modelBuilder.Entity<LinksEntity>()
-                        .HasOne(r => r.Reponse)
-                        .WithMany(l => l._Lien)
-                        .HasForeignKey("Links")
-                        .HasConstraintName("Link_In_Response");
+                .HasMany(q => q.ReponseList)
+                .WithOne(r => r.Question)
+                .HasForeignKey(r => r.QuestionId);
+
             modelBuilder.Entity<ReponseEntity>()
-                         .HasOne(q => q.Question)
-                         .WithMany(l => l._ReponseList)
-                         .HasForeignKey("Reponse")
-                         .HasConstraintName("Reponses_In_Question");
-            modelBuilder.Entity<QuestionEntity>()
-                         .HasOne(t => t.ThemeEx)
-                         .WithMany(q => q._Questions)
-                         .HasForeignKey("Question")
-                         .HasConstraintName("Question_In_Theme");
+                .HasMany(r => r.Liens)
+                .WithOne(l => l.Reponse)
+                .HasForeignKey(l => l.ReponseId);
+
+
+           /*modelBuilder.Entity<LinksEntity>()
+                        .HasOne(r => r.Element)
+                        .HasForeignKey(r => r.ReponseId);*/
+
+
+            modelBuilder.Entity<ThemeExEntity>().Navigation(ci => ci.Questions).AutoInclude();
+            modelBuilder.Entity<QuestionEntity>().Navigation(ci => ci.ReponseList).AutoInclude();
+            modelBuilder.Entity<ReponseEntity>().Navigation(ci => ci.Liens).AutoInclude();
         }
+
+        
 
     }
 }

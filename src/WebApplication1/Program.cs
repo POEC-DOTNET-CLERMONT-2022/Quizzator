@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Quizzator.Persistance;
 
@@ -13,8 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<DbContext, QuizContext>();
 builder.Services.AddDbContext<QuizContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<ThemeManager, ThemeManager>(); 
-
+builder.Services.AddScoped<ThemeManager, ThemeManager>();
 
 var app = builder.Build();
 
