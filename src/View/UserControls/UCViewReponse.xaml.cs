@@ -40,5 +40,19 @@ namespace View.UserControls
             cpt++;
             RaiseEvent(new RoutedEventArgs(gotoQuestionEvent));
         }
+
+        internal static readonly RoutedEvent gotoMainPageEvent = EventManager.RegisterRoutedEvent(
+            "gotoMainPageUCVR", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewQuestion));
+
+        internal event RoutedEventHandler gotoMainPageUCVR
+        {
+            add { AddHandler(gotoMainPageEvent, value); }
+            remove { RemoveHandler(gotoMainPageEvent, value); }
+        }
+
+        internal void gotoMainPageClick(Object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(gotoMainPageEvent));
+        }
     }
 }

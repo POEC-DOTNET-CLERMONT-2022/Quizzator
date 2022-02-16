@@ -41,7 +41,7 @@
                 <RowDefinition Height="16*"></RowDefinition>
                 <RowDefinition Height="16*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="NumQuestion" Content="{Binding Txt}"></Label>
+            <TextBlock Grid.Row="0" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="NumQuestion" Text="{Binding NQuestion}"></TextBlock>
             <TextBlock Grid.Row="1" Foreground="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Question "></TextBlock>
             <Button Click="gotoReponseClick" Grid.Row="2" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Réponse 1"></Button>
             <Button Click="gotoReponseClick" Grid.Row="3" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Réponse 2"></Button>

@@ -24,5 +24,12 @@ namespace Quizzator.ThemeSelection
         {
             InitializeComponent();
         }
+
+        public void ResetDefaultText(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= ResetDefaultText;
+        }
     }
 }

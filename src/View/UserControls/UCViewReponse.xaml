@@ -20,7 +20,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/UserControls/BGVCVSU.jpg" Stretch="Fill" Opacity="1"/>
         </Grid.Background>
-        <Button   Grid.Row="0" Grid.Column="3" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Home"></Button>
+        <Button  Click="gotoMainPageClick" Grid.Row="0" Grid.Column="3" Foreground="White" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Home"></Button>
         <Image Grid.Row="1" Grid.Column="0" Source="/UserControls/HTR.jpg" >
             <Image.OpacityMask>
                 <LinearGradientBrush StartPoint="0.1,0.1" EndPoint="0.75,0.75">

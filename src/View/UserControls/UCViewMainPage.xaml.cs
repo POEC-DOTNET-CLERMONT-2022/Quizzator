@@ -47,5 +47,21 @@ namespace View.UserControls
         {
             RaiseEvent(new RoutedEventArgs(gotoViewQuestionEvent));
         }
+
+
+        internal static readonly RoutedEvent gotoScoreEvent = EventManager.RegisterRoutedEvent(
+            "gotoViewScore", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewQuestion));
+
+        internal event RoutedEventHandler gotoViewScore
+        {
+            add { AddHandler(gotoScoreEvent, value); }
+            remove { RemoveHandler(gotoScoreEvent, value); }
+        }
+
+        internal void gotoViewScoreClick(Object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(gotoScoreEvent));
+        }
+
     }
 }

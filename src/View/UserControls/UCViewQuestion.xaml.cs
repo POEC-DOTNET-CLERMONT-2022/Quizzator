@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,15 @@ namespace View.UserControls
     public partial class UCViewQuestion : UserControl
     {
 
-        internal int CptQuestion { get; set; } 
-        internal string Txt { get; set; }
+        public int CptQuestion { get; set; } = 1;
+
+        public string NQuestion { get; set; } 
+        
         public UCViewQuestion()
         {
             InitializeComponent();
-            CptQuestion = 1;
-            Txt = CptQuestion.ToString();
-            
+            NQuestion = "Question n° " + CptQuestion;
+            this.DataContext = this;
             
         }
 
@@ -48,6 +50,7 @@ namespace View.UserControls
 
         internal static readonly RoutedEvent gotoReponseEvent = EventManager.RegisterRoutedEvent(
             "gotoReponse", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(UCViewConnexion));
+
 
         internal event RoutedEventHandler gotoReponse
         {

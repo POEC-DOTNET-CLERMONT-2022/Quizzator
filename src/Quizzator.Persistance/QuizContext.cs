@@ -19,7 +19,7 @@ namespace Quizzator.Persistance
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test; Trusted_Connection=True",
+            optionsBuilder.UseSqlServer(@"Server=(LocalDb)\MSSQLLocalDB;Database=Test; Trusted_Connection=True",
                 builder => builder.EnableRetryOnFailure());
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

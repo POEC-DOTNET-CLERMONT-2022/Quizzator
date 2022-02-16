@@ -29,8 +29,8 @@ namespace Quizzator.API_REST.Controllers
         {
             try
             {
-                IEnumerable<Entity.ThemeExEntity> list = _quizzRepository.GetAllTheme();
-                var dto = _mapper.Map<IEnumerable<ThemeDtos>>(list);
+                IEnumerable<Entity.ThemeExEntity> l = _quizzRepository.GetAllTheme();
+                var dto = _mapper.Map<IEnumerable<ThemeDtos>>(l);
                 if (dto == null)
                 {
                     return BadRequest();

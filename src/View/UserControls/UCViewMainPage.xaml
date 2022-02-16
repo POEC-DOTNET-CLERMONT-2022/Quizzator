@@ -8,6 +8,7 @@
              x:Name="MainPage"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="9*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -16,17 +17,18 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="9*"></RowDefinition>
         </Grid.RowDefinitions>
+       
         <Menu Grid.Column="1">
             <MenuItem Header="Menu">
                 <MenuItem Header="Profile"></MenuItem>
-                <MenuItem Header="Score"></MenuItem>
+                <MenuItem Header="Score" Click="gotoViewScoreClick"></MenuItem>
                 <MenuItem Header="Contribuer"></MenuItem>
-                <MenuItem Header="Deconnection"></MenuItem>
+                <MenuItem Header="Deconnection" ></MenuItem>
             </MenuItem>
         </Menu>
 
         <ListBox HorizontalContentAlignment="Center"  Grid.ColumnSpan="2"  Grid.Row="1" x:Name="ListTheme">
-            <ListBox.ItemTemplate >
+            <ListBox.ItemTemplate>
                 <DataTemplate >
                     <Button Click="gotoViewQuestionClick" HorizontalAlignment="Center"  Content="{Binding _Name}"></Button>
                 </DataTemplate>
