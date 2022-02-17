@@ -11,5 +11,10 @@ namespace Quizzator.Quizzator.Dtos
         public Guid LinkId { get; set; }
         public string Element { get; set; }
 
+        public LinkDtos()
+        {
+
+        }
+
     }
 }

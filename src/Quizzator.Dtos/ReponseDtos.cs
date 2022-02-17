@@ -11,6 +11,11 @@ namespace Quizzator.Quizzator.Dtos
         public IEnumerable<LinkDtos> Liens { get; set; }
         public string ImagePath { get; set; }
 
+        public ReponseDtos()
+        {
+
+        }
+
         public ReponseDtos(string texte, string explication, List<LinkDtos> lien, string imagePath)
         {
             Texte=texte;
