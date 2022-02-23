@@ -11,7 +11,6 @@ namespace Quizzator.Entity
         public string Texte { get; set; }
         public string ImagePath { get; set; }
         public ICollection<ReponseEntity> ReponseList { get; set; }
-        public ThemeExEntity ThemeEx { get; set; }
         public Guid ThemeId { get; set; } 
 
     }

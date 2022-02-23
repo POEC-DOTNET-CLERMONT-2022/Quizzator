@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Quizzator.Models\Quizzator.Models.csproj" />
+    <ProjectReference Include="..\RequestsAPI\RequestsAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>

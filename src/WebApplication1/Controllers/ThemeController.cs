@@ -63,11 +63,41 @@ namespace Quizzator.API_REST.Controllers
              }
         }
 
+        /*[HttpGet("name/{name}")]
+        [ProducesResponseType(typeof(IEnumerable<ThemeDtos>), 200)]
+        [ProducesResponseType(500)]
+        public IActionResult Get(string name)
+        {
+            try
+            {
+                IEnumerable<ThemeExEntity> l = QuizzRepository.GetThemeByName(name);
+                var dto = Mapper.Map<IEnumerable<ThemeDtos>>(l);
+                if (dto == null)
+                {
+                    return BadRequest();
+                }
+                return Ok(dto);
+
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
+        }*/
+
         // POST api/<ThemeController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public IActionResult Post([FromBody] ThemeDtos themeDto)
         {
-            Console.WriteLine(value);
+          
+            var themeEntity = Mapper.Map<ThemeExEntity>(themeDto);
+            QuizzRepository.CreateTheme(themeEntity);
+            return Ok();
+
+
         }
 
         // PUT api/<ThemeController>/5
@@ -77,9 +107,26 @@ namespace Quizzator.API_REST.Controllers
         }
 
         // DELETE api/<ThemeController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{guid}")]
+        [ProducesResponseType(typeof(bool), 200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public IActionResult Delete(Guid guid)
         {
+            try
+            {
+                var res = QuizzRepository.DeleteTheme(guid);
+                if (res == 1)
+                    return Ok();
+                else if (res == 0)
+                    return NotFound();
+                else
+                    return BadRequest();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
         }
     }
 }

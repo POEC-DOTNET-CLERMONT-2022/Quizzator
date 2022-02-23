@@ -12,7 +12,7 @@ using Quizzator.Persistance;
 namespace Quizzator.Persistance.Migrations
 {
     [DbContext(typeof(QuizContext))]
-    [Migration("20220216151702_InitialCreate")]
+    [Migration("20220223134756_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,6 +99,12 @@ namespace Quizzator.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("bit");
+
                     b.Property<string>("ThemeName")
                         .HasColumnType("nvarchar(max)");
 
@@ -110,35 +116,29 @@ namespace Quizzator.Persistance.Migrations
 
             modelBuilder.Entity("Quizzator.Entity.LinksEntity", b =>
                 {
-                    b.HasOne("Quizzator.Entity.ReponseEntity", "Reponse")
+                    b.HasOne("Quizzator.Entity.ReponseEntity", null)
                         .WithMany("Liens")
                         .HasForeignKey("ReponseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Reponse");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.QuestionEntity", b =>
                 {
-                    b.HasOne("Quizzator.Entity.ThemeExEntity", "ThemeEx")
+                    b.HasOne("Quizzator.Entity.ThemeExEntity", null)
                         .WithMany("Questions")
                         .HasForeignKey("ThemeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("ThemeEx");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.ReponseEntity", b =>
                 {
-                    b.HasOne("Quizzator.Entity.QuestionEntity", "Question")
+                    b.HasOne("Quizzator.Entity.QuestionEntity", null)
                         .WithMany("ReponseList")
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("Quizzator.Entity.QuestionEntity", b =>

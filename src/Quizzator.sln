@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizzator.Persistance", "Qu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizzator.Models", "Quizzator.Models\Quizzator.Models.csproj", "{5828FB68-DA8B-4D09-B202-2F1A5FB14581}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizzator.ThemeSelection", "Quizzator.ThemeSelection\Quizzator.ThemeSelection.csproj", "{974F009A-0B57-4C65-8FC8-9BF8AD17D278}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "View", "View\View.csproj", "{ACAE7E2A-C596-448D-9C0A-7CF4655CB166}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5828FB68-DA8B-4D09-B202-2F1A5FB14581} = {5828FB68-DA8B-4D09-B202-2F1A5FB14581}
@@ -19,6 +17,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizzator.Entity", "Quizzator.Entity\Quizzator.Entity.csproj", "{48D6BEE5-136F-4109-8DFF-A94BA45842A1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_REST", "WebApplication1\API_REST.csproj", "{622B4432-7709-4916-A871-65DA2E72DF6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestsAPI", "RequestsAPI\RequestsAPI.csproj", "{C8E86EC8-0943-45DD-B15A-784C6ECAFFD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{09C1CF1A-7C55-42F9-B6BB-2D8790652485}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +40,6 @@ Global
 		{5828FB68-DA8B-4D09-B202-2F1A5FB14581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5828FB68-DA8B-4D09-B202-2F1A5FB14581}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5828FB68-DA8B-4D09-B202-2F1A5FB14581}.Release|Any CPU.Build.0 = Release|Any CPU
-		{974F009A-0B57-4C65-8FC8-9BF8AD17D278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{974F009A-0B57-4C65-8FC8-9BF8AD17D278}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{974F009A-0B57-4C65-8FC8-9BF8AD17D278}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{974F009A-0B57-4C65-8FC8-9BF8AD17D278}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ACAE7E2A-C596-448D-9C0A-7CF4655CB166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACAE7E2A-C596-448D-9C0A-7CF4655CB166}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAE7E2A-C596-448D-9C0A-7CF4655CB166}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,6 +52,14 @@ Global
 		{622B4432-7709-4916-A871-65DA2E72DF6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622B4432-7709-4916-A871-65DA2E72DF6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{622B4432-7709-4916-A871-65DA2E72DF6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E86EC8-0943-45DD-B15A-784C6ECAFFD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E86EC8-0943-45DD-B15A-784C6ECAFFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E86EC8-0943-45DD-B15A-784C6ECAFFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E86EC8-0943-45DD-B15A-784C6ECAFFD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09C1CF1A-7C55-42F9-B6BB-2D8790652485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C1CF1A-7C55-42F9-B6BB-2D8790652485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C1CF1A-7C55-42F9-B6BB-2D8790652485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C1CF1A-7C55-42F9-B6BB-2D8790652485}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

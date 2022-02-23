@@ -8,6 +8,8 @@ namespace Quizzator.Entity
     {
         public Guid Id { get; set; }
         public string ThemeName { get; set; }
+        public string ImagePath { get; set; }
+        public bool IsVisible { get; set; }
         public ICollection<QuestionEntity> Questions { get; set; }
     }
 }

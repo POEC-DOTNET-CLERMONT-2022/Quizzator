@@ -1,5 +1,6 @@
 ﻿using AutoFixture;
 using Quizzator.Quizzator.Models;
+using RequestsAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -8,12 +8,18 @@ namespace Quizzator.Quizzator.Dtos
 {
     public class LinkDtos
     {
-        public Guid LinkId { get; set; }
+        public Guid Id { get; set; }
         public string Element { get; set; }
 
         public LinkDtos()
         {
 
+        }
+
+        public LinkDtos(Guid id, string element)
+        {
+            Id = id;
+            Element = element;
         }
 
     }

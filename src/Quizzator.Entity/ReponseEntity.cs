@@ -10,8 +10,6 @@ namespace Quizzator.Entity
         public string Explication { get; set; }
         public ICollection<LinksEntity> Liens { get; }
         public string ImagePath { get; set; }
-        public QuestionEntity Question { get; set; }
-
         public Guid QuestionId { get; set; }
     }
 }

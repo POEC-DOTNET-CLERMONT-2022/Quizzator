@@ -60,17 +60,17 @@ namespace Quizzator.Persistance
 
             modelBuilder.Entity<ThemeExEntity>()
                 .HasMany(t => t.Questions)
-                .WithOne(q => q.ThemeEx)
+                .WithOne()
                 .HasForeignKey(q => q.ThemeId);
 
             modelBuilder.Entity<QuestionEntity>()
                 .HasMany(q => q.ReponseList)
-                .WithOne(r => r.Question)
+                .WithOne()
                 .HasForeignKey(r => r.QuestionId);
 
             modelBuilder.Entity<ReponseEntity>()
                 .HasMany(r => r.Liens)
-                .WithOne(l => l.Reponse)
+                .WithOne()
                 .HasForeignKey(l => l.ReponseId);
 
 

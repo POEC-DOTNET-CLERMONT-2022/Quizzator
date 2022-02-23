@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Quizzator.Quizzator.Dtos
 {
@@ -6,9 +7,10 @@ namespace Quizzator.Quizzator.Dtos
 
     public class ReponseDtos
     {
+        public Guid Id { get; set; }
         public string Texte { get; set; }
         public string Explication { get; set; }
-        public IEnumerable<LinkDtos> Liens { get; set; }
+        public ICollection<LinkDtos> Liens { get; }
         public string ImagePath { get; set; }
 
         public ReponseDtos()
