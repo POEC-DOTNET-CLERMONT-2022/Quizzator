@@ -12,6 +12,7 @@ namespace Quizzator.Quizzator.Dtos
         public string Explication { get; set; }
         public ICollection<LinkDtos> Liens { get; }
         public string ImagePath { get; set; }
+        public Guid QuestionId { get; set; }
 
         public ReponseDtos()
         {

@@ -74,10 +74,6 @@ namespace Quizzator.Persistance
                 .HasForeignKey(l => l.ReponseId);
 
 
-           /*modelBuilder.Entity<LinksEntity>()
-                        .HasOne(r => r.Element)
-                        .HasForeignKey(r => r.ReponseId);*/
-
 
             modelBuilder.Entity<ThemeExEntity>().Navigation(ci => ci.Questions).AutoInclude();
             modelBuilder.Entity<QuestionEntity>().Navigation(ci => ci.ReponseList).AutoInclude();

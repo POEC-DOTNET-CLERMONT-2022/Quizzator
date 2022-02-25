@@ -9,9 +9,9 @@ namespace Quizzator.Quizzator.Dtos
     {
         public Guid Id { get; set; }
         public string ThemeName { get; set; }
-        public ICollection<QuestionDtos> Questions { get; set; }
         public string ImagePath { get; set; }
         public bool IsVisible { get; set; }
+        public ICollection<QuestionDtos> Questions { get; set; }
 
         public ThemeDtos()
         {
